@@ -1,11 +1,5 @@
 version: 0.2
 
-env:
-  variables:
-    JAVA_HOME: "/usr/lib/jvm/java-8-openjdk-amd64"
-  parameter-store:
-    MY_PARAMETER: /CodeBuild/testParameter
-
 phases:
   install:
     commands:
@@ -22,7 +16,8 @@ phases:
     commands:
       - echo "Entered the build phase..."
       - echo "Build started on $(date)"
-      - echo "${MY_PARAMETER}"
+      - echo "CODEBUILD_WEBHOOK_EVENT=${CODEBUILD_WEBHOOK_EVENT}"
+      - echo "CODEBUILD_WEBHOOK_TRIGGER=${CODEBUILD_WEBHOOK_TRIGGER}"
     finally:
       - echo "This always runs even if the install command fails"
   post_build:
