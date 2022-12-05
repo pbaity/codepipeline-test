@@ -16,7 +16,7 @@ phases:
     commands:
       - echo "Entered the build phase..."
       - echo "Build started on $(date)"
-      - echo "Now working with dev branch"
+      - echo "Now working from dev branch"
       - echo "CODEBUILD_START_TIME=${CODEBUILD_START_TIME}"
       - echo "CODEBUILD_WEBHOOK_EVENT=${CODEBUILD_WEBHOOK_EVENT}"
       - echo "CODEBUILD_WEBHOOK_TRIGGER=${CODEBUILD_WEBHOOK_TRIGGER}"
